@@ -140,6 +140,22 @@ class Client
     }
 
     /**
+     * Get the shared link's metadata.
+     * 
+     * @link https://www.dropbox.com/developers/documentation/http/documentation#sharing-get_shared_link_metadata
+     */
+    public function getSharedMetadata(string $path): array
+    {
+        $parameters = [
+            'url' => $path,
+        ];
+
+        $body = $this->rpcEndpointRequest('sharing/get_shared_link_metadata', parameters);
+
+        return $body;
+    }
+
+    /**
      * Delete the file or folder at a given path.
      *
      * If the path is a folder, all its contents will be deleted too.
