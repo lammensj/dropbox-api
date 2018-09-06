@@ -150,7 +150,7 @@ class Client
             'url' => $path,
         ];
 
-        $body = $this->rpcEndpointRequest('sharing/get_shared_link_metadata', parameters);
+        $body = $this->rpcEndpointRequest('sharing/get_shared_link_metadata', $parameters);
 
         return $body;
     }
